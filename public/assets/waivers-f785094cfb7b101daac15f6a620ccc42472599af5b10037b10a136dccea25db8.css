@@ -1,0 +1,15 @@
+/* line 5, app/assets/stylesheets/waivers.css.scss */
+.waiverform {
+  background-color: white;
+  font: black;
+}
+
+/* line 11, app/assets/stylesheets/waivers.css.scss */
+.waiver-links a {
+  font-size: 8px;
+}
+
+/* line 16, app/assets/stylesheets/waivers.css.scss */
+.waiver-border {
+  border: 1px solid red;
+}

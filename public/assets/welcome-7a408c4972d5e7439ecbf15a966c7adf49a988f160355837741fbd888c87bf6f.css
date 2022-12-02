@@ -1,0 +1,43 @@
+/* line 4, app/assets/stylesheets/welcome.css.scss */
+.horsham-banner {
+  width: 100%;
+  background-color: #ebedf0;
+  height: auto;
+  border-radius: 2px;
+  border: 1px double black;
+  padding: 10px;
+  margin: 3px;
+  display: flex;
+}
+
+/* line 15, app/assets/stylesheets/welcome.css.scss */
+.campescapes-logo {
+  text-align: left;
+  width: auto;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  min-width: 150px !important;
+}
+
+/* line 24, app/assets/stylesheets/welcome.css.scss */
+.campescapes-text {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+}
+
+/* line 31, app/assets/stylesheets/welcome.css.scss */
+.campescapes-text a {
+  color: black;
+}
+
+/* line 36, app/assets/stylesheets/welcome.css.scss */
+.ce-text {
+  padding-left: 7px;
+  margin: auto;
+  flex: 4;
+  text-align: center;
+}
