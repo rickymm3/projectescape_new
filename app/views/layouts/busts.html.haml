@@ -1,0 +1,42 @@
+!!!
+%html{lang:"en"}
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %meta(name="google-site-verification" content="GxXr-oIxCWDWXstb25gZe8RTc8XWt2TLJv6SVug1Wzw")
+    %meta(name="description" content="Project Escape is an Escape Room located in Conshohocken, just outside Philly. Book now for a fun night out, a corporate team building exercise, or a special occasion!")
+    %meta{:content => "vxgJqKk75O1pb3leOzOxATuAEXkZomFf-F-LvHEuLLM", :name => "google-site-verification"}/
+    %meta{}
+    %title= content_for?(:title) ? yield(:title) : "#{@title}"
+    = csrf_meta_tags
+    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    %link{:href => "https://fonts.googleapis.com/css?family=Passion+One", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Fjalla+One", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Iceland", :rel => "stylesheet", :type => "text/css"}
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    %link{:href => "//fonts.googleapis.com/css?family=Open+Sans", :rel => "stylesheet", :type => "text/css"}
+    %link{href:"//maxcdn.bootstrapcdn.com/font-awesome/5.10.2/css/font-awesome.min.css", rel:"stylesheet"}
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=AW-825941124"}
+    %script{src:"https://fareharbor.com/embeds/api/v1/?autolightframe=yes"}
+    %script{:src => "https://kit.fontawesome.com/7fc7f9c195.js"}
+    / Facebook Pixel Code
+    :javascript
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '323323218394605');
+      fbq('track', 'PageView');
+    %noscript
+      %img{:height => "1", :src => "https://www.facebook.com/tr?id=323323218394605&ev=PageView&noscript=1", :style => "display:none", :width => "1"}/
+    / End Facebook Pixel Code
+    = yield :head
+    %body
+      .article
+        = yield

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @waiver.name
+%p
+  %b Email:
+  = @waiver.email
+%p
+  %b Room:
+  = @waiver.room
+
+= link_to 'Edit', edit_waiver_path(@waiver)
+\|
+= link_to 'Back', waivers_path

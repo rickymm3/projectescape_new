@@ -1,0 +1,152 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Static version of css will use Glyphicons sprites by default
+  =require twitter-bootstrap-static/sprites
+*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+
+}
+.navbar-default {
+  background-color: #231f20;
+  a {
+    color: white!important;
+  }
+  a:hover {
+    color:#ffcf63!important;
+  }
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+  color: black!important;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-nav {
+  a {
+    color: #eee;
+  }
+}
+.navbar-right {
+  margin-right: 15px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.divider-custom {
+  display:none;
+  *width: 100%;
+  height: 1px;
+  margin: 9px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+@media (max-width: 768px) {
+
+  .navbar-nav {
+    padding-left: 0px;
+    li > a {
+      padding-left: 0px;
+    }
+    li { p {
+      text-align:center;
+    } }
+    li { p:before }
+  }
+  .divider-custom { display:block!important; }
+  .navbar-right {
+    margin-right: -15px;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    color: white!important;
+  }
+  .small-only {
+    display: block!important;
+  }
+  .brand-text-top {
+    display: none;
+  }
+  .brand-image-top{
+    display: none;
+  }
+  .container > .pull-right {
+    float: none!important;
+  }
+  .brand-project{
+    color:#6e787b!important;
+  }
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+  color:black!important;
+}
+.dropdown-toggle:active, .open .dropdown-toggle:hover {
+  color:#6e787b!important;
+}
+
+//sm screen
+@media (min-width: 767px) {
+  .bottom-margin {
+    margin-bottom: 0px!important;
+  }
+}
+@media (max-width: 768px) {
+  .map-marker {
+    display:none;
+  }
+  .banner {
+    max-width: 350px!important;
+  }
+  .countdown{
+    display:none!important;
+  }
+  .twitter-hide {
+    display:none;
+  }
+}
+
+@media (max-width: 550px) {
+  .ca-logo {
+    width: 200px!important;
+    height: auto;
+  }
+}
+
+@media (max-width: 475px) {
+  .brand-text-small-text {
+    font-size: 20px;
+  }
+
+
+}
+//md screen
+@media (max-width: 992px) {
+  .countdown {
+    display:none!important;
+  }
+  .background-axe {
+    height: 422px!important;
+  }
+}
+@media (max-width: 750px) {
+  .background-axe {
+    height: 281px!important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .countdown {
+    display:none!important;
+  }
+}

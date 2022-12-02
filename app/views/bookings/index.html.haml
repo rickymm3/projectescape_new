@@ -1,0 +1,96 @@
+.container
+  .row
+    .col-lg-12.col-md-12.col-sm-12
+      %h2
+        %b So, you're ready to book!
+        %p
+          %i Here are a few things you should know
+      %h3
+        %b What exactly should you expect?
+      %p.indent
+        Each Project Escape experience will last
+        %b 1 hour.
+        Put on your thinking caps, and bring only your wits and imagination!
+        You'll enter a mysterious room, it's up to you to figure out what to do next, we don't want to ruin the surprise!
+      %p.indent Book now to ensure you get your desired time slot!
+      %p.indent
+        %b
+          %small
+            *If you'd like to book less than the minimum, please call us, and we will try to accomodate.
+      %h3
+        %b Decide who you want to bring!
+      %p.indent
+        Project Escape is a TEAM experience.  Get together your brightest group of friends (or the funnest!), and get ready for a
+        brand new type of live cooperative gaming experience!
+      %h3
+        %b Project Escape is fun for all ages!
+      %p.indent
+        Our Escape Rooms are said to be quite difficult, however we offer a dynamic difficulty curve that allows
+        all age groups to have fun.  We've found that children ages 12 and up can contribute to the puzzles, while
+        younger children love the overall look and feel of the room, and always surprise the older crowd by thinking outside the box!
+      %p.indent
+        %b *All minors (under 18) require adult supervision inside the room.
+      %h1 Conshohocken, PA
+      %h3 1495 Alan Wood Rd, Conshohocken, PA, 19403
+
+      %script{:src => "https://fareharbor.com/embeds/script/items/projectescaperoom/?full-items=yes,40420&fallback=simple"}
+
+      -#%a.peek-book-btn-green.peek-book-button-flat.peek-book-button-sm{"data-button-text" => "Book Now", "data-embed" => "false", :href => "https://www.peek.com/s/16b0211e-1bb1-4e9e-a9d6-e76a74fa5b70/e8z3"} The Wizard's Secret
+      %p
+        %h3 Need a present for the Holidays? Buy a Project Escape gift card? Use the button below:
+        -#%a.peek-book-button-flat.peek-book-btn-yellow.peek-book-button-size-lg.peek-book-icon-gift{"data-button-text" => "Purchase Gift Card", "data-partner-gid" => "5820f0ccaf24bdd27e371566", "data-purchase-type" => "gift-card", :href => "http://www.peek.com/purchase/gift_card/5820f0ccaf24bdd27e371566"} Gift Card
+      -#=image_tag("heist-banner.png", class:'bookimages', size: '250x250')
+      -#=image_tag("banner-small.png", class:'bookimages', size: '250x250')
+      %h3
+        %b So you've booked! Awesome! What now?
+        %br
+        %br
+        %p
+          You'll need to bring only yourself and your friends.  No other items are required.
+          Please show up 15 minutes early so we can explain the rules and get you ready!
+        %p
+          The countdown starts exactly
+          %b on time!
+          So if you're late, you'll be missing valuable seconds!
+      %p.small-text
+        please allow 3 days notice for partial refunds. click here for our
+        =link_to "refund policy", "", "data-target" => "#myModal", "data-toggle" => "modal"
+
+
+  / Button trigger modal
+  / Modal
+  #myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4#myModalLabel.modal-title Project Escape Refund Policy
+        .modal-body
+          %h3
+            %strong Cancellations:
+          %p
+            If for some reason you need to cancel, please call us at least 3 days prior to your
+            scheduled booking time.  We can not provide a refund if you
+            %strong
+              do not
+            give us 3 days notice!  In the event where you must cancel, we will allow a one time
+            courtesy rescheduling time if you call prior to your booking time.
+          %h3
+            %strong Rescheduling
+          %p
+            If for some reason you can not make it to your booking, we will allow you to reschedule.
+            Please call us at least 24 hours prior to reschedule.
+          %p
+            We want you to enjoy our room as much as we do! Please keep this refund policy in mind
+            while booking!  Thank you.
+
+:javascript
+
+  <!-- Event snippet for project escape booking conversion page -->
+
+  gtag('event', 'conversion', {
+    'send_to': 'AW-825941124/VHfPCJif9HkQhLnriQM',
+    'transaction_id': ''
+  });
+

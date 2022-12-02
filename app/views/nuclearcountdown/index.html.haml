@@ -1,0 +1,91 @@
+.background-countdown
+  #start-game
+  .center
+    %span#time2
+  .center
+    #hint-text.white-text
+      #findtime{ "data-timer" => @timer}
+
+:javascript
+  window.onload = function() {
+
+  //timercountdown
+    function CountDownTimer(duration, granularity) {
+      this.duration = duration;
+      this.granularity = granularity || 1000;
+      this.tickFtns = [];
+      this.running = false;
+    }
+
+    CountDownTimer.prototype.start = function() {
+      if (this.running) {
+        return;
+      }
+      this.running = true;
+      var start = Date.now(),
+        that = this,
+        diff, obj;
+
+      (function timer() {
+        diff = that.duration - (((Date.now() - start) / 1000) | 0);
+
+        if (diff > 0) {
+          setTimeout(timer, that.granularity);
+        } else {
+          diff = 0;
+          that.running = false;
+        }
+
+        obj = CountDownTimer.parse(diff);
+        that.tickFtns.forEach(function(ftn) {
+          ftn.call(this, obj.minutes, obj.seconds);
+        }, that);
+      }());
+    };
+
+    CountDownTimer.prototype.onTick = function(ftn) {
+      if (typeof ftn === 'function') {
+        this.tickFtns.push(ftn);
+      }
+      return this;
+    };
+
+    CountDownTimer.prototype.expired = function() {
+      return !this.running;
+    };
+
+    CountDownTimer.parse = function(seconds) {
+      return {
+        'minutes': (seconds / 60) | 0,
+        'seconds': (seconds % 60) | 0
+      };
+    };
+
+  //timer code
+    var display1 = document.querySelector('#time2'),
+        timer = new CountDownTimer(#{@nuclear.end - Time.now});
+
+    timer.onTick(format1).start();
+
+    function format1(minutes, seconds) {
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      display1.textContent = minutes + ':' + seconds;
+    }
+
+    function get_text(){
+      $('#log_complete').append('<li>get_fb() ran</li>');
+      var feedback = $.ajax({
+        type: "POST",
+        url: "nuclear/update_text",
+        async: false
+      }).complete(function(){
+        setTimeout(function(){get_text();}, 1000);
+      }).responseText;
+    }
+
+    $(function(){
+      get_text();
+    });
+
+  };

@@ -1,0 +1,31 @@
+.pull-left
+  .brand-image-top
+    = link_to root_path, class: 'navbar-brand' do
+      =image_tag "pe-logo-black.png", size:'91x60'
+    = link_to root_path, class: 'no-decoration' do
+      %span.brand-text-top
+        =render "layouts/brand_text"
+.location-container.pull-right
+  .pull-left
+    =link_to "directions" do
+      %i.fa.fa-map-marker.maps
+  .location
+    =link_to "directions" do
+      %span
+        1495 Alan Wood Rd.
+      %br
+        %span
+          Conshohocken
+        %span
+          PA
+        %span
+          19428
+    %i.fa.fa-mobile-phone.phone
+    %span.phone-number
+      ="484-535-3108"
+    %span.phone-number
+      ="|"
+    =link_to("mailto:general@projectescaperoom.com") do
+      %i.fa.fa-envelope
+  .book-now.navbar-btn.pull-right
+    =render 'layouts/bookings'

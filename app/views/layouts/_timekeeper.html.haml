@@ -1,0 +1,35 @@
+%table.timekeeper
+  %tbody
+    %tr.white
+      %td Room
+      %td Active
+      %td Start/Stop
+      %td Time
+      %td Adjust
+    %tr
+      -if tk.room == "wizard"
+        %td.white
+          =link_to 'Wizard(countdown)', wizardcountdown_index_path,target: :_blank
+        %td
+          #wizardisrunning
+      -if tk.room == "heist"
+        %td.white
+          =link_to 'Heist(countdown)', heistcountdown_index_path,target: :_blank
+        %td
+          #heistisrunning
+      -if tk.room == "nuclear"
+        %td.white
+          =link_to 'Nuclear(countdown)', nuclearcountdown_index_path,target: :_blank
+        %td
+          #nuclearisrunning
+      %td
+        #startstop
+          =render "countdown/startstop", tk:tk
+      %td
+        %span#ctime1
+      %td
+        =form_tag(addtime_countdown_index_path(tk:tk), method: 'post') do
+          = label_tag 'Time+/-'
+          = number_field_tag :astime, "", class:'black-text smallinput'
+          %button{class:'btn btn-primary'}
+            +/-

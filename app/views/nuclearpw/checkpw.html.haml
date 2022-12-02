@@ -1,0 +1,17 @@
+.container
+  -if @fail == false
+    .white
+      ="Success"
+      =image_tag "steamgenerator.png"
+  -else
+    .white
+      ="Incorrect Date - Please go BACK and reenter"
+      =link_to "nuclearpw", nuclearpw_index_path
+
+
+
+
+
+
+
+

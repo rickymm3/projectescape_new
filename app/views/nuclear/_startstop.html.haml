@@ -1,0 +1,6 @@
+-if check_running(tk)
+  -startstop = 'stop'
+-else
+  -startstop = 'start'
+
+= button_to(startstop, starttimer_countdown_index_path(room:room, startstop:startstop), class:'btn btn-small btn-primary',remote:true)

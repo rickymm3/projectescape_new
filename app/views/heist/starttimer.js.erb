@@ -1,0 +1,6 @@
+<%if @heist %>
+    $('#heistisrunning').html('<%=j render 'countdown/startstop', room:"heist", check:true %>');
+<%end%>
+<%if @wizard %>
+    $('#wizardisrunning').html('<%=j render 'countdown/startstop', room: "wizard", check:true %>');
+<%end%>

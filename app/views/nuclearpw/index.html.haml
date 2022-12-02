@@ -1,0 +1,29 @@
+.container
+
+  %br
+  %br
+  %br
+  %br
+
+  = form_tag checkpw_nuclearpw_index_url do
+    .date.form-group
+      %p
+        We picked this PW to remind us of that tragic accident.  
+      %p 
+        Cant dwell on that though!  Lets move forward to employee orientation day!  
+      .white
+        Month
+      = select_tag :one, options_for_select(0..9), class: 'custom-select custom-select-lg mb-3'
+      = select_tag :two, options_for_select(0..9)
+      .white
+        Day
+      = select_tag :three, options_for_select(0..9)
+      = select_tag :four, options_for_select(0..9)
+      .white.custom-select
+        Year
+      = select_tag :five, options_for_select(0..9)
+      = select_tag :six, options_for_select(0..9)
+    .actions
+      = submit_tag 'Submit', class: "btn-warning btn"
+
+

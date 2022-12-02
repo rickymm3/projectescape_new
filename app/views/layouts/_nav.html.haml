@@ -1,0 +1,94 @@
+%nav.navbar.navbar-default{role:'navigation'}
+  .container
+    .container-fluid
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        .small-only
+          = link_to root_path, class: 'navbar-brand' do
+            .brand-text-small
+              .brand-text-small-image
+                =image_tag "pe-logo-white.png", size:'61x40'
+              .brand-text-small-text
+                =render "layouts/brand_text"
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li
+            =link_to rooms_path do
+              Our Rooms
+              %span.sr-only
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Escape Room FAQ
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                =link_to "What is an Escape Room?", faq_index_path(anchor:"what-is")
+              %li
+                =link_to "How does it work?", faq_index_path(anchor:"how-does-it-work")
+              %li
+                =link_to "Whats the cost?", faq_index_path(anchor:"cost")
+              %li
+                =link_to "How many people can play", faq_index_path(anchor:"number-players")
+              %li
+                =link_to "BYOB?", faq_index_path(anchor:"byob")
+              %span.sr-only
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Plan an Event!
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                =link_to "Corporate Team Building", corporates_path
+              %li
+                =link_to "Perfect for Parties!", parties_path
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Info
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                %a
+                  %i.fa.fa-phone
+                  484-535-3108
+              %li
+                =mail_to ("info@projectescaperoom.com") do
+                  %i.fa.fa-envelope
+                  info@projectescaperoom.com
+              %li
+                =link_to "directions" do
+                  %i.fa.fa-map-marker
+                  Directions
+              %li
+                %a.twitter-follow-button{"data-show-count" => "false", :href => "https://twitter.com/projectescapePA"} Follow @projectescapePA
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Locations
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                =link_to "Conshohocken, PA", rooms_path
+
+        %ul.nav.navbar-nav.navbar-right
+          %li.countdown
+            %a
+              %span.time 00:
+              %span#time
+                60:00
+          %li
+            =link_to "http://www.facebook.com/projectescaperoom/" do
+              %i.fa.fa-facebook
+          %li
+            =link_to "https://twitter.com/projectescapePA" do
+              %i.fa.fa-twitter
+          %li
+            =link_to "https://www.instagram.com/projectescaperoom/" do
+              %i.fa.fa-instagram
+
+:javascript
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');

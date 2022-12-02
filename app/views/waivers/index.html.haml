@@ -1,0 +1,27 @@
+%h1 Listing waivers
+-if !@pwaccepted
+  You do not have access to view this page
+-if @pwaccepted == true
+  %p
+    Waivers listed were signed in the last 2 hours
+  %p
+    Use this to ensure people signed the waiver appropriately
+  %p
+    export
+    = link_to "CSV", waivers_path(format: "csv", time:"all")
+  %table.table
+    %thead
+      %tr
+        %th Name
+        %th Email
+        %th Room
+        %th Signed
+    %tbody
+      - @waivers.each do |waiver|
+        %tr
+          %td= waiver.name
+          %td= waiver.email
+          %td= waiver.room
+          %td= "#{time_ago_in_words(waiver.updated_at)} ago"
+  %br
+  = link_to 'New Waiver', new_waiver_path

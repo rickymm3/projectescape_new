@@ -1,0 +1,224 @@
+-if params[:pwaccepted] == "true"
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .pull-left
+        =link_to "<------ATTENTION!------>", "http://192.168.1.161:5000/play/98", remote:true, class:"btn btn-danger"
+      .pull-left.white
+        =form_tag("heist/custom_message", method: 'post', remote:true) do
+          = label_tag 'Type Hint'
+          = text_field_tag :message, "", class:'black-text', size: 75
+          %button{class:'btn btn-primary'}
+            submit
+      .pull-left.white
+        =form_tag("heist/clear_hint", method: 'post', remote:true) do
+          = label_tag 'Clear Hint'
+          %button{class:'btn btn-primary'}
+            %i.fa.fa-stop
+      #timekeeper.white
+        =render "layouts/timekeeper", tk:@heist
+  .whitetext
+    %br
+    %br
+    %br
+    %br
+    %h1
+      The Big Score
+    %h4
+      General
+      %ul
+        %li
+          =link_to "hints on the tv!", "http://192.168.1.161:5000/play/39", remote:true
+        %li
+          =link_to "Professional Rookies", "http://192.168.1.161:5000/play/3", remote:true
+        %li
+          =link_to "Look for some kind of lock to use with that code you found", "http://192.168.1.161:5000/play/12", message:"Look for some kind of lock to use with that code you found", remote:true, class: "message"
+        %li
+          =link_to "Look for some kind of lock to use with that key you found", "http://192.168.1.161:5000/play/18", message:"Look for some kind of lock to use with that key you found", remote:true, class: "message"
+        %li
+          =link_to "Check outside - Maybe you missed something?", "http://192.168.1.161:5000/play/16", message:"Check outside - Maybe you missed something?", remote:true, class: "message"
+        %li
+          =link_to "45 minutes left", "http://192.168.1.161:5000/play/34", remote:true
+        %li
+          =link_to "35 minutes left", "http://192.168.1.161:5000/play/35", remote:true
+        %li
+          =link_to "Looks like youre slowing down", "http://192.168.1.161:5000/play/36", remote:true
+        %li
+          =link_to "Im Impressed", "http://192.168.1.161:5000/play/37", remote:true
+        %li
+          =link_to "Vipers right around the corner", "http://192.168.1.161:5000/play/38", remote:true
+        %li
+          =link_to "Those busts look important, maybe you can find a few more lying around!", "http://192.168.1.161:5000/play/4", remote:true
+
+    %h5{style:"border:solid 1px white"}
+      %p Dynamic text hints
+      %table
+        %th
+          %tr
+            %th Message
+            %th
+            %th
+
+        %tbody
+          - @texthints.each do |texthint|
+            %tr
+              %td= link_to texthint.message, "http://192.168.1.161:5000/play/98", remote:true, class: "message", message: texthint.message
+              %td= link_to 'Edit', edit_texthint_path(texthint), class:"btn btn-info"
+              %td= link_to 'X', texthint, :method => :delete, :data => { :confirm => 'Are you sure?' }, class:"btn btn-danger"
+        %br
+
+      = link_to 'New Hint (must refresh page)', new_texthint_path, class:"btn btn-warning"
+
+      %h3 Static Text Hints
+      %ul
+        %li
+          =link_to "Our spies found an interesting symbol outside...Have you seen it?", "http://192.168.1.161:5000/play/98",  message:"Our spies found an interesting symbol outside...Have you seen it?", remote:true, class: "message"
+        %li
+          =link_to "After you get the order, you'll need the orientation", "http://192.168.1.161:5000/play/98",  message:"After you get the order, you'll need the orientation .. I bet those symbols will help with that.", remote:true, class: "message"
+        %li
+          =link_to "The busts...they can be arranged in an order, and orientated in 8 different directions!", "http://192.168.1.161:5000/play/98",  message:"The busts...they can be arranged in an order, and orientated in 8 different directions!", remote:true, class: "message"
+        %li
+          =link_to "The Green Mirror Pg 4? ... It looks like it was just recently written!", "http://192.168.1.161:5000/play/98",  message:"The Green Mirror Pg 4? ... It looks like it was just recently written!", remote:true, class: "message"
+        %li
+          =link_to "I heard the Viper has a rat problem ... They were chewing holes through the brick walls ... gross", "http://192.168.1.161:5000/play/98",  message:"I heard the Viper has a rat problem ... They were chewing holes through the brick walls ... gross", remote:true, class: "message"
+        %li
+          =link_to "The paper says, 'inside the walls.'  Is there some kind of tool you can use to look inside the walls? ", "http://192.168.1.161:5000/play/98",  message:"The paper says, 'inside the walls.'  Is there some kind of tool you can use to look inside the walls?", remote:true, class: "message"
+        %li
+          =link_to "Those objects in the holes ... i swear i saw them somewhere else as well", "http://192.168.1.161:5000/play/98",  message:"Those objects in the holes ... i swear i saw them somewhere else as well", remote:true, class: "message"
+
+    %h4
+      %p [courtyard]
+      Breaking into the house
+      %ul
+        %li
+          =link_to "Make sure you read the mission summary - Boss said he’d add the code after it was typed up.", "http://192.168.1.161:5000/play/1", message:"", remote:true, class: "message"
+        %li
+          =link_to "Stop Messing around - Read the mission summary for the keypad code", "http://192.168.1.161:5000/play/2", message:"", remote:true, class: "message"
+    %h4
+      Crumpled Paper
+      %ul
+        %li
+          =link_to "Look everywhere - He may have trashed something before he left", "http://192.168.1.161:5000/play/5", message:"Look everywhere - He may have trashed something before he left", remote:true, class: "message"
+        %li
+          =link_to "Does that trash you found reference anything? A Journal, a Book?", "http://192.168.1.161:5000/play/6", message:"Does that trash you found reference anything? A Journal, a Book?", remote:true, class: "message"
+        %li
+          =link_to "I looked over that sheet you found in the trash. 'Enamels' is a book.", "http://192.168.1.161:5000/play/7", message:"I looked over that sheet you found in the trash. 'Enamels' is a book.", remote:true, class: "message"
+        %li
+          =link_to "That page with the holes, its some kind of decoder", "http://192.168.1.161:5000/play/8", message:"That page with the holes, its some kind of decoder", remote:true, class: "message"
+        %li
+          =link_to "Align the two papers", "http://192.168.1.161:5000/play/9", message:"Align the two papers", remote:true, class: "message"
+    %h4
+      The Hole
+      %ul
+        %li
+          =link_to "Theres something fishy about that flower garden", "http://192.168.1.161:5000/play/11", message:"Theres something fishy about that flower garden", remote:true, class: "message"
+    %h4
+      The Brick Wall Message
+      %ul
+        %li
+          =link_to "Use the hooks on the wall to help unscramble the letters!", "http://192.168.1.161:5000/play/14", message:"Use the hooks on the wall to help unscramble the letters!", remote:true, class: "message"
+        %li
+          =link_to "I figured out the first 2 words...'Take Hold'", "http://192.168.1.161:5000/play/15", message:"I figured out the first 2 words...'Take Hold'", remote:true, class: "message"
+        %li
+          =link_to "'Where ashes lie' .. Where do you burn things?", "http://192.168.1.161:5000/play/19", message:"'Where ashes lie' .. Where do you burn things?", remote:true, class: "message"
+        %li
+          =link_to "The fireplace looks like its been tampered with.", "http://192.168.1.161:5000/play/20", message:"The fireplace looks like its been tampered with.", remote:true, class: "message"
+    %h4
+      Fountain
+      %ul
+        %li
+          =link_to "Maybe you un'surfaced' something with the valve", "http://192.168.1.161:5000/play/17", message:"Maybe you un'surfaced' something with the valve", remote:true, class: "message"
+    %h4
+      Map + Journal
+      %ul
+        %li
+          =link_to "The journal and the map are connected!", "http://192.168.1.161:5000/play/23", message:"The journal and the map are connected!", remote:true, class: "message"
+        %li
+          =link_to "Read through the journal, carefully!", "http://192.168.1.161:5000/play/21", message:"Read through the journal, carefully!", remote:true, class: "message"
+        %li
+          =link_to "The journal is keeping track of the real diamonds location!", "http://192.168.1.161:5000/play/22", message:"The journal is keeping track of the real diamonds location!", remote:true, class: "message"
+        %li
+          =link_to "Does that code on the last page of the journal look like any lock in the room?", "http://192.168.1.161:5000/play/24", message:"Does that code on the last page of the journal look like any lock in the room?", remote:true, class: "message"
+    %h4
+      Glasses and Screen
+      %ul
+        %li
+          =link_to "Try on the suspicious glasses", "http://192.168.1.161:5000/play/25", message:"Try on the suspicious glasses", remote:true, class: "message"
+        %li
+          =link_to "The jukebox has an opening for records", "http://192.168.1.161:5000/play/26", message:"The jukebox has an opening for records", remote:true, class: "message"
+        %li
+          =link_to "The coordinates on the screen..Maybe they aren't coordinates", "http://192.168.1.161:5000/play/27", message:"The coordinates on the screen..Maybe they aren't coordinates", remote:true, class: "message"
+        %li
+          =link_to "I think the coordinates are actually years", "http://192.168.1.161:5000/play/28", message:"I think the coordinates are actually years", remote:true, class: "message"
+    %h4
+      Diamond Room
+      %ul
+        %li
+          =link_to "That map looks like the Diamond room", "http://192.168.1.161:5000/play/29", message:"That map looks like the Diamond room", remote:true, class: "message"
+        %li
+          =link_to "A sundial with no sun?", "http://192.168.1.161:5000/play/31", message:"A sundial with no sun?", remote:true, class: "message"
+        %li
+          =link_to "That sundial ... it looks out of place", "http://192.168.1.161:5000/play/30", message:"That sundial ... it looks out of place", remote:true, class: "message"
+    %h4
+      Misc
+      %ul
+        %li
+          =link_to "Laugh Track", "http://192.168.1.161:5000/play/97", remote:true, class: "message"
+
+
+
+  :javascript
+    window.onload = function() {
+
+    //check if game is running
+      function check_if_running(){
+        var feedback = $.ajax({
+          type: "POST",
+          url: "countdown/checkrunning",
+          data: {
+            "room": "heist", // Quotes were missing
+          },
+          async: false
+        }).complete(function(){
+          setTimeout(function(){check_if_running();}, 5000);
+        }).responseText;
+      }
+
+
+      $(function(){
+        check_if_running();
+      });
+
+    //timer code
+    var display1 = document.querySelector('#ctime1'),
+        display2 = document.querySelector('#ctime2'),
+        timer = new CountDownTimer(#{@heist.end - Time.now});
+
+    timer.onTick(format1).start();
+
+    function format1(minutes, seconds) {
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      display1.textContent = minutes + ':' + seconds;
+    }
+
+    $('.message').on('click', function() {
+      var data = {"message" : $(this).attr('message')};
+      $.ajax({
+        type: "POST",
+        url: "heist/playfile",
+        data: data,
+        dataType: "json",
+        success: function(data) {
+         alert('successfully');
+        }
+      });
+    });
+
+    };
+-else
+  =render "heist/login_form"
+  -if params[:warning] == "true"
+    .white
+      If you are not accessing this from Project Escape location, your IP has been logged. Due to malicious attacks using our systems, and the few people who have access, including current and previous employees, we will investigate with law enforcement - Expect to be prosecuted to the fullest extent of the law. 
+      %br
+      IP: #{request.remote_ip}

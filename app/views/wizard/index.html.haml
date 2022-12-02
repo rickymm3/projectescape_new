@@ -1,0 +1,162 @@
+-if params[:pwaccepted] == "true"
+
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .pull-left
+        =link_to "<------ATTENTION!------>", "http://192.168.1.10:5000/play/96", remote:true, class:"btn btn-danger"
+      .pull-left.white
+        =form_tag("wizard/custom_message", method: 'post', remote:true) do
+          = label_tag 'Type Hint'
+          = text_field_tag :message, "", class:'black-text', size: 75
+          %button{class:'btn btn-primary'}
+            submit
+      .pull-left.white
+        =form_tag("wizard/clear_hint", method: 'post', remote:true) do
+          = label_tag 'Clear Hint'
+          %button{class:'btn btn-primary'}
+            %i.fa.fa-stop
+      #timekeeper.white
+        =render "layouts/timekeeper", tk:@wizard
+  %br
+  %br
+  %br
+  %br
+  %h1
+  .whitetext
+    %h2
+      Wizard's Secret Room
+
+    %h5{style:"border:solid 1px white"}
+      %p Dynamic text hints
+      %table
+        %th
+          %tr
+            %th Message
+            %th
+            %th
+
+        %tbody
+          - @texthint2s.each do |texthint2|
+            %tr
+              %td= link_to texthint2.message, "http://192.168.1.10:5000/play/96", remote:true, class: "message", message: texthint2.message
+              %td= link_to 'Edit', edit_texthint2_path(texthint2), class:"btn btn-info"
+              %td= link_to 'X', texthint2, :method => :delete, :data => { :confirm => 'Are you sure?' }, class:"btn btn-danger"
+        %br
+
+      = link_to 'New Hint (must refresh page)', new_texthint2_path, class:"btn btn-warning"
+  %h3.white
+    Start
+  %ul.highlight.bold
+    =render "wizard/link", nowrite:true, message:"Play start", audioid:1
+  %h3.white
+    Dungeon
+  %ul.white
+    =render "wizard/link", nowrite:false, message:"Pirates Theme! - Use when skeleton arm is used", audioid:95
+
+    =render "wizard/link", nowrite:false, message:"Look closely on the wall outside the cell! It appears to be just out of ‘arms’ reach!", audioid:2
+    =render "wizard/link", nowrite:false, message:"I see something shiny on the other side of that cell door!", audioid:3
+    =render "wizard/link", nowrite:false, message:"That note looks enchanted!  You should easily be able to find the answer, in the right light!", audioid:4
+    =render "wizard/link", nowrite:false, message:"I believe the previous inmate figured out the combination to that lock.  Search the cell for clues! Hurry now!", audioid:5
+    =render "wizard/link", nowrite:false, message:"The previous inmate was quite the sleuth.  He left many of his clues scribbled on the dungeon wall!", audioid:6
+    =render "wizard/link", nowrite:false, message:"The enchantment on that note, it can only be seen under the light of the full moon! ", audioid:7
+    =render "wizard/link", nowrite:false, message:"That parchment is too thick for the moon to pierce! Try reading the note using the light of the full moon!", audioid:8
+    =render "wizard/link", nowrite:false, message:"Press the stone bricks in the right order! Do it quickly!", audioid:10
+  %h3.white
+    New Room
+  %ul.highlight.bold
+    =render "wizard/link", nowrite:true, message:"Secret Room", audioid:11
+  %h3.white
+    Wizard Room
+  %ul.white
+    =render "wizard/link", nowrite:false, message:"When working together, some Muggles can channel strong magic through their palms!", audioid:12
+    =render "wizard/link", nowrite:false, message:"Look for a place you can channel your magical energy!", audioid:13
+    =render "wizard/link", nowrite:false, message:"Those pesky paintings, they can’t help but look right at my secret! Can you figure it out? Quickly now!", audioid:14
+    =render "wizard/link", nowrite:false, message:" Watch each painting carefully, they can’t help but look at the answer!  1, then 2, then 3!", audioid:16
+  %h3.white
+    Potions
+  %ul.white
+    =render "wizard/link", nowrite:false, message:"I left some useful spells in my spellbook, Look for them If you haven’t yet found them!", audioid:17
+    =render "wizard/link", nowrite:false, message:"Use the magical symbol I made inside the potion room to test each of the ingredients. Listen carefully!", audioid:18
+    =render "wizard/link", nowrite:false, message:"No, no, no, one at a time!  Try only one potion at a time! ", audioid:19
+    =render "wizard/link", nowrite:false, message:"I marked the same magical symbol outside the potion room as well!", audioid:20
+  %h3.white
+    Chess
+  %ul.white
+    =render "wizard/link", nowrite:true, message:"You’ve solved my game of Wizard’s Chess!  Wonderful! A.D. mentioned a surprise...Where did that noise come from?", audioid:21
+    =render "wizard/link", nowrite:false, message:"I wrote about the outcome of my chess game in my journal!  Why don’t you take another look?", audioid:22
+    =render "wizard/link", nowrite:false, message:"You’ll have to find the correct wooden symbols, There are 3! Then place it into properly into their setting.", audioid:35
+
+  %h3.white
+    Wanted Posters
+  %ul.white
+    =render "wizard/link", nowrite:false, message:"(notwokring)I wrote some notes about the death eaters on the back of Sirius Black’s wanted poster.", audioid:25
+    =render "wizard/link", nowrite:false, message:"I used the wanted posters on the wall in the dungeon to help finish my notes!", audioid:26
+    =render "wizard/link", nowrite:false, message:"Those wanted posters in the dungeon, they are missing a key piece of information!", audioid:27
+  %h3.white
+    Ending
+  %ul.white
+    =render "wizard/link", nowrite:true, message:"You've found all 3 of my magical items! They are the key to breaking the chains to the exit!", audioid:30
+    =render "wizard/link", nowrite:false, message:"I had a painting commissioned to commemorate my 3 magical items!  Did you see it?", audioid:23
+    =render "wizard/link", nowrite:false, message:"The placement of those items is magical, it must be exact! Look for hints on the table as to how to place it just right!", audioid:29
+    =render "wizard/link", nowrite:false, message:"You found all my precious items!  But your escape is not finished! You need to use all three of these items together in order to break the chains!  ", audioid:32
+    =render "wizard/link", nowrite:false, message:"Each of those items have sat on that table for years.  The table has been worn down to show it!", audioid:36
+  %h3.white
+    Random
+  %ul.white
+    =render "wizard/link", nowrite:true, message:"The guards are almost back!  You must escape, Quickly now!  Hurry!", audioid:34
+    =render "wizard/link", nowrite:false, message:"You may have escaped the dungeon, but you’re not done with it …. Yet.", audioid:28
+    =render "wizard/link", nowrite:false, message:"You found my TriWizards Cup!  Hmph, okay! Perhaps I didn’t win it in the tournament, but It is still one of my precious items.  ", audioid:31
+    =render "wizard/link", nowrite:false, message:"Aha! You found my armillary sphere! ", audioid:33
+
+  :javascript
+    window.onload = function() {
+
+      //check if game is running
+
+      $(function(){
+        check_if_running();
+      });
+
+    };
+
+    //timer code
+
+    function check_if_running(){
+      var feedback = $.ajax({
+        type: "POST",
+        url: "countdown/checkrunning",
+        data: {
+          "room": "wizard"
+        },
+        async: false
+      }).complete(function(){
+        setTimeout(function(){check_if_running();}, 10000);
+      }).responseText;
+    }
+
+    var timer = new CountDownTimer(#{@countdown});
+    var display1 = document.querySelector('#ctime1');
+
+    timer.onTick(format1).start();
+
+    function format1(minutes, seconds) {
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      display1.textContent = minutes + ':' + seconds;
+    }
+
+    $('.message').on('click', function() {
+      var data = {"message" : $(this).attr('message')};
+      $.ajax({
+        type: "POST",
+        url: "wizard/playfile",
+        data: data,
+        dataType: "json",
+        success: function(data) {
+         alert('successfully');
+        }
+      });
+    });
+-else
+  =@text
+  =render "wizard/login_form"

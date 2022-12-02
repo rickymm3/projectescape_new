@@ -1,0 +1,79 @@
+-if @room == "wizard"
+  -room = "The Wizard's Secret"
+-else
+  -room = "The Big Score"
+
+%h1 Project Escape Release and Waiver Agreement
+= flash_messages
+
+%p
+  You are entering the
+  %b #{room}
+
+%p
+  By digitally signing the below form, you are confirming that you have read and agree to Project Escapes
+  Release and Waiver agreement form.
+%p
+  =link_to "Release and Waiver Agreement", "", "data-target" => "#myModal", "data-toggle" => "modal"
+
+
+%p
+-if params[:room]
+  = render 'form'
+-if !params[:room]
+  Please select a room for the current group:
+%br
+%br
+
+%footer.footer
+  .container
+    .waiver-links
+      change room:
+      -if @room == "wizard"
+        = link_to 'wizard', "#", class: "btn btn-sm waiver-border"
+        = link_to 'heist', new_waivers_path(room:"heist"), class: "btn btn-sm"
+      -if @room == "heist"
+        = link_to 'wizard', new_waivers_path(room:"wizard"), class: "btn btn-sm"
+        = link_to 'heist', "#", class: "btn btn-sm waiver-border"
+      -if !@room
+        = link_to 'wizard', new_waivers_path(room:"wizard"), class: "btn btn-sm"
+        = link_to 'heist', new_waivers_path(room:"heist"), class: "btn btn-sm"
+
+#myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#myModalLabel.modal-title Project Escape Release and Waiver Agreement
+      .modal-body
+        %p
+          Project Escape, LLC operates and or conducts room escape adventures.
+          Participating in a room escape can or could result in injuries ot the participant.
+          The participant, by executing his or her signature to this release, does hereby release,
+          waive, discharge and covenant not to sue Project Escape, LLC, its officers, members,
+          promoters, owners, employees, contractors or business partners, and any other affiliates
+          from any and all liability, injuries, or any and all other claims and damages as a result of
+          participating in an event sponsored by Project Escape, LLC.  Furthermore, the participant, on
+          behalf of his personal representatives, assigns, heirs, and next of kin, does hereby release
+          any and all claims, damages, injuries, incurred by the participant in regards to the participation
+          in such events.  Participants agree to hereby release any claims, of whatever kind of nature, present
+          and future, damages and injuries.  Participant assumes full responsibility for and risk of bodily
+          injury, death, or property damages due to negligence or non-negligence of Project Escape, LLc, its
+          owners and employees.  The undersigned further acknowledges that he/she is voluntarily
+          participating despite the risk of falls, contact and/or crashes with other participants, defective
+          equipment, and the condition of the room.
+        %p
+          I agree that Project Escape, LLC or any of its assigns has the right to any photos or any
+          video/sound footage of me during the game.   Photos may be used for any marketing purposes. I
+          fully understand that there are no refunds under any conditions once I purchase my entrance fee.
+        %p
+          Project Escape, LLC, has the right to charge the participant for any damages caused by reckless
+          behavior, or carelessness.  Project Escape, LLC reserves the right to decide what constitutes said
+          behavior.  In any event where an item is damaged or in the case where future services are impacted due
+          to the participants behavior, Project Escape, LLC reserves the right to charge the offending party's
+          credit card for incurred damages or for any impacted parties/bookings following the offending party.
+        %p
+          By signing this agreement I agree that I or the part of my responsible party lose my/our right to sue
+          anyone involved with Project Escape.
+

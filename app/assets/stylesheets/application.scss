@@ -1,0 +1,705 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+//dark yellow:  e3a912 || db0202  :dark red
+//light yellow: ebbc4f ||
+html {
+  padding:0;
+  margin:0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+body {
+  color: #353131;
+  font-family: 'Open Sans'!important;
+  background-color: #fff/* nb*/;
+}
+
+header {
+  padding: 0px;
+  width: 100%;
+  display:block;
+//  background-color: #2f465e
+}
+
+.top {
+  padding-top: 10px;
+  height: 105px;
+  background: #ebbc4f; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ebbc4f 0%, #ebbc4f 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #ebbc4f 0%,#ebbc4f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #ebbc4f 0%,#ebbc4f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaaf2e', endColorstr='#ebbc4f',GradientType=0 ); /* IE6-9 */
+  border-bottom: 2px #e7e7e7 solid;
+}
+
+.header-nav {
+  margin-top: -25px;
+}
+
+.margin-top {
+  margin-top: 30px;
+}
+
+.bottom-margin {
+  margin-bottom: 30px;
+}
+
+.border1 {
+  border: 1px solid black;
+}
+
+.logo {
+  font-family: Arial;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.escape-image{
+  margin-bottom: 15px;
+  img {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+  }
+}
+.info-image {
+//  background-image: image-url('repeating-bg.jpg');
+}
+
+.booking {
+  padding-top:20px;
+  width: 600px;
+  margin:auto;
+}
+
+.information {
+  margin-top: 20px;
+}
+
+.whitebg {
+  background-color: white;
+}
+
+.yellow {
+  color: #ebbc4f;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.black{
+  color: #231f20;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.what-is {
+  text-align: left;
+  margin-bottom: 30px;
+  p {
+    letter-spacing: 1px;
+  }
+}
+.h1custom {
+  letter-spacing: 3px;
+  font-size: 35px;
+  font-family: "Open Sans";
+}
+
+.h1custom1 {
+  margin-top: 0px!important;
+}
+
+.events {
+  background-color:#231f20;
+  padding: 30px;
+}
+
+.event {
+  padding:0px 20px;
+  text-align:center;
+  color: white;
+  .event-icon {
+    -webkit-font-smoothing: antialiased !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    color: white;
+    font-size: 50px;
+    letter-spacing: 3px;
+  }
+  .event-label {
+    font-size: 20px;
+    color: #ebbc4f;
+    font-weight: bold;
+  }
+  p {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+}
+
+.brand-image-top {
+  margin-left: 10px;
+}
+
+.info-image {
+}
+
+footer {
+  text-align: center;
+}
+
+.bookings {
+  width: 600px;
+  margin:auto;
+}
+
+
+h1 {
+  font-family: 'Open Sans';
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+}
+h3 {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+}
+p {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+blockquote {
+  font-family: 'Open Sans';
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+pre {
+  font-family: 'Open Sans';
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+}
+
+.location {
+  color:white;
+  display: inline-block;
+  font-size: 14px!important;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  font-family: 'Passion One', cursive;
+  letter-spacing: 1px;
+  a {
+    color: white;
+  }
+  a:hover {
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+  }
+  .phone {
+    color: white;
+  }
+  .phone-number {
+    color: #231f20;
+  }
+}
+
+.location2 {
+  color:black;
+  display: inline-block;
+  font-size: 14px!important;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  font-family: 'Passion One', cursive;
+  letter-spacing: 1px;
+  a {
+    color: white;
+  }
+  a:hover {
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+  }
+  .phone {
+    color: white;
+  }
+  .phone-number {
+    color: #231f20;
+  }
+}
+
+.loc_icon {
+  padding-bottom: 0px!important;
+}
+
+.map-marker {
+  margin-right: 10px;
+  height: 60px;
+  width: 60px;
+  margin-top: 2px;
+  opacity: 0.2;
+  background-image: image-url('Google_Maps_Icon.png');
+  background-size: 60px 60px;
+  background-repeat: no-repeat;
+  a {
+    display:block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.map-marker:hover {
+  opacity:1;
+}
+
+.google-maps {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+  iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }
+}
+
+.location-container {
+  position:relative;
+  height: 60px;
+}
+
+.center {
+  margin:auto;
+}
+
+.small-only {
+  display:none;
+}
+
+.book-now {
+  padding-top: 5px;
+}
+
+.brand-text-top {
+  margin-left: 5px;
+  font-size: 45px;
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: -2px;
+}
+
+.brand-text-small {
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  .brand-escape {
+    color: #EBBC4F;
+  }
+  .brand-project {
+    color: white!important;
+  }
+}
+.brand-project {
+  color: #231f20;
+}
+.brand-escape {
+  color:white;
+}
+.brand-text-small-image {
+  float:left;
+}
+.brand-text-small-text {
+  float:left;
+  margin-left: 10px;
+  margin-top: 12px;
+}
+
+.maps {
+  opacity: 1;
+  font-size: 50px!important;
+  color:white;
+  margin-top:5px;
+  margin-right: 10px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #231f20;
+}
+
+.flip {
+  -webkit-transform:rotate(-180deg);
+  -moz-transform:rotate(-180deg);
+  -o-transform:rotate(-180deg);
+  transform:rotate(-180deg);
+  ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
+.no-decoration {
+  text-decoration: none!important;
+}
+
+.maps:hover {
+  opacity: .8;
+}
+
+.banner {
+  margin-top: 20px!important;
+  float: none;
+  margin: 0 auto;
+  overflow:hidden;
+  max-width: 500px;
+  height: 150px;
+  border-radius: 20px;
+  img {
+    margin-left: -50px;
+    margin-top: -100px;
+  }
+}
+
+.small-text {
+  font-size: 8px;
+}
+
+.one-room-banner {
+  float: none;
+  margin: 0 auto;
+  overflow:hidden;
+  width: 240px;
+  height: auto;
+  border-radius: 5px;
+  background-color: blue;
+  img {
+    width: 260px;
+    height: auto;
+    margin-left: -20px;
+  }
+}
+.time {
+  font-size: 30px;
+  color: #EBBC4F!important;
+  font-family: 'Iceland', cursive;
+}
+
+#time {
+  font-size: 30px;
+  color: #EBBC4F!important;
+  font-family: 'Iceland', cursive;
+  margin-left: -4px;
+}
+
+.btn-fullwidth {
+  width: 100%!important;
+}
+
+.maxwidth-rooms {
+  max-width: 400px;
+  margin: auto;
+}
+
+.tightletters {
+  letter-spacing: -2px;
+}
+
+.textstroke {
+  -webkit-text-stroke-width: .2px;
+  -webkit-text-stroke-color: #231f20;
+}
+
+.excitefont {
+  font-size: 60px;
+}
+.border-right {
+  border-left: solid 1px #e7e7e7;
+}
+
+.body-padding {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.white-text {
+  font-family: 'impact', sans-serif;
+  text-align: center;
+}
+
+.whitetext {
+  color: white;
+  i {
+    color: black!important;
+  }
+}
+
+#time2 {
+  font-size: 350px;
+  text-align: left;
+  color: white!important;
+  font-family: 'impact';
+}
+
+.black-text {
+  color:black;
+}
+
+#hint-text {
+  width:1000px;
+  color: white;
+  margin-top: -75px;
+  font-size: 50px;
+}
+
+.background-countdown {
+  background-color: black!important;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.blackbody {
+  background-color: black;
+}
+
+.floatleft {
+  float:left;
+}
+
+.runes {
+  width: 377px;
+}
+
+.compass-text {
+  font-size: 25px;
+}
+
+.compass p {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.bigger {
+  font-size: 22px!important;
+}
+
+.peek-up {
+  margin-top: -7px;
+}
+
+img.bookimages {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.indent {
+  padding-left: 10px;
+}
+
+.timekeeper tr, .left {
+  border: 1px solid red;
+}
+.greenfont {
+  color: green!important;
+}
+.redfont {
+  color: red!important;
+}
+
+.price {
+  position: relative;
+  top: -5px;
+  font-size: 50px;
+  color: white!important;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #231f20;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wiztime {
+  font-family: "harryp"!important;
+}
+
+.wiztime2 {
+  padding-left: 40px;
+  text-align: left;
+  width: 800px!important;
+}
+
+.wizard {
+  width:800px;
+  color: white;
+  margin-top: -75px;
+  font-size: 40px;
+  font-family: "harryp";
+}
+
+ul.highlight {
+  li {
+    background-color: white;
+    color: red;
+    a {
+      color: red;
+    }
+    width: 600px;
+  }
+}
+
+.red {
+  a {
+    color:red!important;
+  }
+}
+
+.white {
+  color:white;
+}
+
+.actions-btn {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.fb-page-container {
+  height: 800px;
+}
+
+.wizard-painting {
+  position:absolute;
+  color: black!important;
+
+  background-image: url("hogwarts.jpg");
+
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-gift-height {
+  height: 75px !important;
+}
+.margin-top-10 {
+  margin-top:10px;
+}
+
+.padding-top-10 {
+  padding-top:10px;
+}
+
+.holiday-font {
+  text-size:16px !important;
+}
+
+.green {
+  color: #5cb85c;
+  font-size: 24px;
+}
+
+.contactbtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0px 20px;
+}
+
+.btn-xl {
+    background-color: #ebbc4f;
+    border: 1px solid #black;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.btn-xl:hover {
+  background-color: black;
+}
+
+.btn-xl:active {
+  background-color: #ebbc4f;
+}
+
+.btn-xl:visited {
+  background-color: #ebbc4f;
+}
+
+.left-ca-logo {
+  float: left;
+}
+
+.right-ca-logo {
+  padding-top: 20px;
+}
+
+.background-axe{
+  width: 100%;
+  height: 500px;
+  background-image: image-url("combo.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.ca-logo-axe {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.moreinfo-axe {
+  background-color: #652d93;
+  color: white;
+  p {font-size: 18px;}
+  h1 {font-size: 35px}
+  padding: 10px 40px;
+}

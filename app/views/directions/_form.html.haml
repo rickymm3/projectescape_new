@@ -1,0 +1,10 @@
+= form_for @direction do |f|
+  - if @direction.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@direction.errors.count, "error")} prohibited this direction from being saved:"
+      %ul
+        - @direction.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

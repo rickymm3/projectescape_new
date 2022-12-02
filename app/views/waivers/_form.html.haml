@@ -1,0 +1,20 @@
+= form_for @waiver do |f|
+  - if @waiver.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@waiver.errors.count, "error")} prohibited this waiver from being saved:"
+      %ul
+        - @waiver.errors.full_messages.each do |msg|
+          %li= msg
+
+  %p
+    .input-group
+      %span#size-addon1.input-group-addon Name:
+      = f.text_field :name, class: "form-control", :required => true
+  %p
+    .input-group
+      %span#size-addon1.input-group-addon Email:
+      = f.email_field :email, class: "form-control", :required => true
+  .field
+    = f.hidden_field :room, value: @room
+  .actions
+    = f.submit 'I agree', class: "btn btn-submit actions-btn"

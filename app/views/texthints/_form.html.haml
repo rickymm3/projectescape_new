@@ -1,0 +1,13 @@
+= form_for @texthint do |f|
+  - if @texthint.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@texthint.errors.count, "error")} prohibited this texthint from being saved:"
+      %ul
+        - @texthint.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :message
+    = f.text_field :message
+  .actions
+    = f.submit 'Save'

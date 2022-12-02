@@ -1,0 +1,72 @@
+-if params[:pwaccepted] == "true"
+
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .pull-left
+        =link_to "<------ATTENTION!------>", "http://192.168.1.10:5000/play/96", remote:true, class:"btn btn-danger"
+      .pull-left.white
+        =form_tag("nuclear/custom_message", method: 'post', remote:true) do
+          = label_tag 'Type Hint'
+          = text_field_tag :message, "", class:'black-text', size: 75
+          %button{class:'btn btn-primary'}
+            submit
+      .pull-left.white
+        =form_tag("nuclear/clear_hint", method: 'post', remote:true) do
+          = label_tag 'Clear Hint'
+          %button{class:'btn btn-primary'}
+            %i.fa.fa-stop
+      #timekeeper.white
+        =render "layouts/timekeeper", tk:@nuclear
+
+  :javascript
+    window.onload = function() {
+
+      //check if game is running
+
+      $(function(){
+        check_if_running();
+      });
+
+    };
+
+    //timer code
+
+    function check_if_running(){
+      var feedback = $.ajax({
+        type: "POST",
+        url: "countdown/checkrunning",
+        data: {
+          "room": "wizard"
+        },
+        async: false
+      }).complete(function(){
+        setTimeout(function(){check_if_running();}, 10000);
+      }).responseText;
+    }
+
+    var timer = new CountDownTimer(#{@countdown});
+    var display1 = document.querySelector('#ctime1');
+
+    timer.onTick(format1).start();
+
+    function format1(minutes, seconds) {
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      display1.textContent = minutes + ':' + seconds;
+    }
+
+    $('.message').on('click', function() {
+      var data = {"message" : $(this).attr('message')};
+      $.ajax({
+        type: "POST",
+        url: "wizard/playfile",
+        data: data,
+        dataType: "json",
+        success: function(data) {
+         alert('successfully');
+        }
+      });
+    });
+
+-else
+  =render "nuclear/login_form"

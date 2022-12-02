@@ -1,0 +1,88 @@
+.container-fluid
+  .container.body-padding
+    .row
+      .col-xs-12.col-sm-8.col-md-8.col-lg-8
+        %br
+        %br
+        %div
+          %br
+          %p.center.whitebg{itemprop:"description"}
+            Ready for a
+            %span.yellow
+              new
+            and
+            %span.yellow
+              unique
+            experience! Get together with friends and book now for the
+            %span.black
+              best time out
+            in a long time at Project Escape in Conshohocken!
+
+            %br
+            %br
+              We are located in
+              %b Conshohocken
+              , right off
+              %b 476
+              exit
+              %b 18b
+              to
+              %b Norristown.
+              %br same road as the IKEA
+        %div
+          %br
+            .video.center
+              .video-container
+                %iframe{:frameborder => "0", :height => "480", :src => "https://www.youtube.com/embed/WRnCZsKCw2k", :width => "853"}
+          .what-is
+            %hr
+              =render "welcome/excite_text"
+            %hr
+            %p
+              %strong
+                %span
+                  Project Escape
+                is the most immersive Escape Room in the Philadelphia area.
+                Our strong commitment towards quality and design offers you a ride you won't forget!
+                When you join us, you and your friends will get to take part in an intricate plot with a
+                myriad of clever puzzles seamlessly woven together. This is an experience you won't stop
+                talking about!
+            %hr
+            %p
+              Both Experts and novice escape room fans will all have a great time joining the Bosses crew,
+              and stealing back the elegant Millennium Diamond. Featuring professional
+              voice acting, and a series of dynamic puzzles, our first room is only the beginning in a line of
+              expertly crafted escape room games.  Book now to experience the phenomenon.
+      #fb-root
+      .twitter-hide.col-xs-12.col-sm-4.col-md-4.col-lg-4.border-right
+        .fb-page-container
+          .fb-page{"data-adapt-container-width" => "true", "data-hide-cover" => "true", "data-href" => "https://www.facebook.com/projectescaperoom/", "data-height"=>"800", "data-show-facepile" => "true", "data-small-header" => "false", "data-tabs" => "timeline"}
+            %blockquote.fb-xfbml-parse-ignore{:cite => "https://www.facebook.com/projectescaperoom/"}
+              %a{:href => "https://www.facebook.com/projectescaperoom/"} Project Escape      -#.twitter-hide.col-xs-12.col-sm-4.col-md-4.col-lg-4.border-right
+.events
+  =render "events"
+
+:javascript
+  {
+  "@context": "http://schema.org",
+  "@type": "LocalBusiness",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Conshohocken",
+    "addressRegion": "PA",
+    "postalCode":"19428",
+    "streetAddress": "1495 Alan Wood Rd"},
+  "description": "An exciting live room escape experience in Conshohocken!",
+  "name": "Project Escape",
+  "telephone": "4845353108",
+  "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 10:00-20:00",
+  "url": "http://www.projectescaperoom.com",
+  "email":"mailto:bookings@projectescaperoom.com",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.099281",
+    "longitude": "-75.303361"},
+  "sameAs" : [
+    "http://www.facebook.com/projectescaperoom",
+    "http://www.twitter.com/projectescapePA"],
+  }

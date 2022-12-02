@@ -1,0 +1,21 @@
+%h1 Listing texthints
+
+%table
+  %thead
+    %tr
+      %th Message
+      %th
+      %th
+      %th
+
+  %tbody
+    - @texthints.each do |texthint|
+      %tr
+        %td= texthint.message
+        %td= link_to 'Show', texthint
+        %td= link_to 'Edit', edit_texthint_path(texthint)
+        %td= link_to 'Destroy', texthint, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Texthint', new_texthint_path

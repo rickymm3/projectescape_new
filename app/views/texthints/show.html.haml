@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Message:
+  = @texthint.message
+
+= link_to 'Edit', edit_texthint_path(@texthint)
+\|
+= link_to 'Back', texthints_path

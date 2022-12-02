@@ -1,0 +1,11 @@
+.container
+  %p#notice= notice
+  %p
+    %b
+      %h1 
+        = @post.heading
+  %br
+  %p
+    .post-content
+      %p
+        =@post.content.html_safe
